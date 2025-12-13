@@ -1,2 +1,16 @@
-# python-practice
-Collection of Python practice projects focusing on core data structures, logic, and more to come.
+# Python Practice
+
+This repository contains beginner Python projects created while learning core concepts.
+
+## Projects
+- course_manager.py  
+  Manages courses and students using dictionaries, lists, and functions.
+
+- student_grades.py  
+  Tracks student scores and calculates averages.
+
+## Concepts Practiced
+- Functions
+- Dictionaries
+- Lists and nested data
+- Loops and user input
