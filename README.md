@@ -14,3 +14,9 @@ This repository contains beginner Python projects created while learning core co
 - Dictionaries
 - Lists and nested data
 - Loops and user input
+- Classes
+- Multiple Inheritance
+- Multilevel Inheritance
+- Polymorphism
+- Static Methods
+- 
