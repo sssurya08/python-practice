@@ -1,0 +1,97 @@
+class Person:
+    def __init__(self, name, identity):
+        self.name = name
+        self.identity = identity
+
+    def get_role(self):
+        return "Person"
+
+    def describe(self):
+        print(f"{self.name} is a person in the school.")
+
+
+class Student(Person):
+    def __init__(self, name, identity, grades):
+        super().__init__(name, identity)
+        self.grades = grades
+
+    def calculate_average(self):
+        return sum(self.grades) / len(self.grades)
+
+    def get_role(self):
+        return "Student"
+
+    def describe(self):
+        avg = self.calculate_average()
+        print(f"{self.name} is a student with an average of {avg:.2f}.")
+
+
+class Prefect(Student):
+    def __init__(self, name, identity, grades, leadership_level):
+        super().__init__(name, identity, grades)
+        self.leadership_level = leadership_level
+
+    def get_role(self):
+        return "Prefect"
+
+    def describe(self):
+        avg = self.calculate_average()
+        print(
+            f"{self.name} is a prefect with leadership level "
+            f"{self.leadership_level} and an average of {avg:.2f}."
+        )
+
+
+class Teacher(Person):
+    def __init__(self, name, identity, subject):
+        super().__init__(name, identity)
+        self.subject = subject
+
+    def get_role(self):
+        return "Teacher"
+
+    def teach(self):
+        print(f"{self.name} is teaching {self.subject}.")
+
+    def describe(self):
+        print(f"{self.name} is a teacher who teaches {self.subject}.")
+
+
+class Admin:
+    def __init__(self, access_level):
+        self.access_level = access_level
+
+    def approve_request(self):
+        print("Request approved.")
+
+
+class HeadTeacher(Teacher, Admin):
+    def __init__(self, name, identity, subject, access_level):
+        Teacher.__init__(self, name, identity, subject)
+        Admin.__init__(self, access_level)
+
+    def get_role(self):
+        return "HeadTeacher"
+
+    def describe(self):
+        print(
+            f"{self.name} is the head teacher for {self.subject} "
+            f"with access level {self.access_level}."
+        )
+
+
+class SchoolUtils:
+    @staticmethod
+    def validate_id(identity):
+        return isinstance(identity, int) and identity > 0
+
+
+people = [
+    Student("Alex", 1, [90, 85, 88]),
+    Prefect("Shreya", 2, [95, 92, 93], 3),
+    Teacher("Mr. Lee", 3, "Math"),
+    HeadTeacher("Dr. Smith", 4, "Science", 5)
+]
+
+for person in people:
+    person.describe()
