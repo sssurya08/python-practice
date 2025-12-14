@@ -19,4 +19,3 @@ This repository contains beginner Python projects created while learning core co
 - Multilevel Inheritance
 - Polymorphism
 - Static Methods
-- 
